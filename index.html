@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tower of Hanoi</title>
+
+  <script type="text/javascript" src="utils.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="hierarchy.js"></script>
+  <script type="text/javascript" src="gameLogic.js"></script>
+  <script type="text/javascript" src="eventListners.js"></script>
+  <script type="text/javascript" src="webgl-obj-loader.min.js"></script>
+  <script type="text/javascript" src="raycast.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+  <table>
+      <tr>
+        <td>
+          <canvas id="gameCanvas" height="600" style="background-color: rgb(204, 204, 204);"></canvas>
+          </canvas>
+            <div id="alert" class="alert alert-danger fade show mt-4" style="display:none; position: absolute; z-index: 1; left: 10px; top: 500px; width:300px;" role="alert">
+              <strong>Move not possible!</strong> Remeber that you can move discs only on bigger ones
+            </div>
+		
+        </td> 
+        <td id="sideBar" width="300" class="form-group" style="background-color: rgb(231, 196, 149); font-family: courier; padding: 5px;">
+          <h3 class="text-center mt-2"><b>TOWER OF HANOI</b></h3>
+
+          <p class="text-center mt-2"><b>Change difficulty:</b></p>
+          <div class="input-group gap-2">
+            <select id="drop-down-difficulty" class="form-select" aria-label="Default select example">
+              <option value="3">3 discs</option>
+              <option value="4" selected>4 discs</option>
+              <option value="5">5 discs</option>
+              <option value="6">6 discs</option>
+              <option value="7">7 discs</option>
+            </select>
+            <button id="reset_btn" type="button"  class="btn btn-secondary btn-lg">Reset</button>
+          </div>
+
+          <p class="text-center mt-2"><b>Play:</b></p>
+          <div class="input-group gap-2 mt-3">
+            <p>Move from</p>
+            <select id="drop-down-from" class="form-select">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <p>to</p>
+            <select id="drop-down-to" class="form-select">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+            </select>
+            <button id="confirm_Move" type="button" class="btn btn-secondary">Move</button>
+          </div>
+
+          
+          <p class="text-center mt-2"><b>Change texture:</b></p>
+          <select id="drop-down-texture" class="form-select" aria-label="Default select example">
+            <option value="1">Colors</option>
+            <option value="2" selected>Wood 1</option>
+            <option value="3">Wood 2</option>
+            <option value="4">Marble</option>
+          </select>
+          <p class="text-center mt-2"><b>Camera options:</b></p>
+          <div>
+            <input id="elevationSlider" type="range" min="-180" max="180" step="10" value="-20"/> <span id="slider1">Elev:-20° </span>  <br/>	
+          </div>
+          <div>      
+            <input id="angleSlider" type="range" min="-180" max="180" step="10" value="0"/> <span id="slider2">Angle:0° </span><br/>	
+          </div>
+
+          <p class="text-center mt-2"><b>Hemispheric lighting options:</b></p>
+          <div>
+            <input type="color" id="upperColor" value="#000000"> <span>Upper</span>	    
+            <input type="color" id="lowerColor" value="#333333"> <span>Lower</span>	
+            <button id="resetColors_btn" type="button"  class="btn btn-secondary">Reset</button>
+          </div>
+        </td>
+      </tr>
+	</table>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+Without translations, discs are positioned on the leftmost peg of the base.
